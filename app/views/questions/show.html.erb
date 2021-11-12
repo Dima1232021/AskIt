@@ -1,0 +1,18 @@
+<h1 class='mb-4'><%= @question.title %></h1>
+
+<p class='lead my-3'><%= @question.body %></p>
+
+<section class='lead my-3'>
+   <time datetime="<% @question.formatted_createda_at %>" > 
+      <b>Сreated:</b> <smail><%= @question.formatted_createda_at %></smail>  
+   </time>
+
+   <time datetime="<% @question.formatted_updated_at %>" > 
+     <b>Changed:</b> <smail><%= @question.formatted_updated_at %></smail>  
+   </time>
+</section>
+
+<%= link_to 'Edit', edit_question_path(@question.id), class: 'btn btn-secondary' %>  
+<%= link_to 'Destroy', question_path(@question.id), data: {method: :delete, confirm: 'are you sure ?' }, class: 'btn btn-danger' %>
+
+
